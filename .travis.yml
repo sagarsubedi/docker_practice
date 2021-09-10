@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t ssubedi1/node .
+  - docker images ssubedi1/node
