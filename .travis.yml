@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t ssubedi1/node .
   - docker images ssubedi1/node
+
+before_deploy:
+  - docker login -u <username> -p <userPassword>
+
+deploy:
+  provider: script
+  script: docker push ssubedi1/node
+  on:
+    branch: master
